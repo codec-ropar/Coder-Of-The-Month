@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import requests
 
-file = pd.read_csv("COM_march.csv")
+file = pd.read_csv("COM_1.csv")
 lower_usernames = [str(i).lower().strip() for i in file['Codeforces Username']]
 file['Codeforces Username'] = lower_usernames
 
@@ -68,4 +68,4 @@ file[contestName] = [100 * (1 - i / numParticipants) for i in RANK]
 for i in file:
     if i[:7] == 'Unnamed':
         del file[i]
-file.to_csv('COM_march.csv')
+file.to_csv('COM_1.csv')
